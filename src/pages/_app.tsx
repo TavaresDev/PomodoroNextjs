@@ -1,5 +1,5 @@
 import Head from "next/head"
-import ChallengesProvider from "../contexts/ChallengesContext"
+import {ChallengesProvider} from "../contexts/ChallengesContext"
 
 import "../styles/globals.css"
 

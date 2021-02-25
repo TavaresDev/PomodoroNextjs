@@ -1,31 +1,35 @@
 import React, { useContext } from "react"
-import ChallengesContext from "../contexts/ChallengesContext"
+import { ChallengesContext } from "../contexts/ChallengesContext"
 import styles from "../styles/components/ChallengeBox.module.css"
 
 const ChallengeBox = () => {
+	const { activeChallenge, resetChallenge } = useContext(ChallengesContext)
 
-    const contextDate = useContext(ChallengesContext)
-	const hasActiveChallenge = true
 	return (
 		<div className={styles.ChallengeBoxContainer}>
-			{hasActiveChallenge ? (
+			{activeChallenge ? (
 				<div className={styles.ChallengeActive}>
-                    <header>400 xp</header>
-                    <main>
+					<header>{activeChallenge.amount} xp</header>
+					<main>
+						<img src={`icons/${activeChallenge.type}.svg`} alt='level up' />
+						<strong> New Challege</strong>
+						<p>{activeChallenge.description}</p>
+					</main>
 
-                    <img src='icons/body.svg' alt='level up' />
-                        <strong> New Challege</strong>
-                        <p>Go for a walk</p>
-                    </main>
-
-                    <footer>
-                        <button className={styles.challengeFailedButton} >Faill</button>
-                        <button className={styles.challengeSuccessButton}>Completed </button>
-                    </footer>
-                     </div>
+					<footer>
+						<button
+							className={styles.challengeFailedButton}
+							onClick={resetChallenge}>
+							Faill
+						</button>
+						<button className={styles.challengeSuccessButton}>
+							Completed{" "}
+						</button>
+					</footer>
+				</div>
 			) : (
 				<div className={styles.ChallengeNotActive}>
-					<strong> Finish an cicle to recive a challenge</strong>
+					<strong> Finish a cicle to recive a challenge</strong>
 					<p>
 						<img src='icons/level-up.svg' alt='level up' />
 						Up levels by completing Challenges
