@@ -8,6 +8,7 @@ import Profile from "../components/Profile"
 import styles from "../styles/pages/Home.module.css"
 
 // #jornadainfinita
+// #focopraticagrupo
 
 export default function Home() {
 	return (
