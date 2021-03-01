@@ -53,18 +53,15 @@ export default function Home(props: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-	//chamaga a api
+	//call api to get data to render on the serverside
 
 	const { level, currentExperience, challengesCompleted } = ctx.req.cookies
-	console.log(ctx.req.cookies )
-
-
 
 	return {
 		props: {
-			level: Number(level) ,
-			currentExperience: Number(currentExperience),
-			challengesCompleted: Number(challengesCompleted),
+			level: level === undefined ? 1: Number(level) ,
+			currentExperience: currentExperience === undefined ? 0: Number(currentExperience),
+			challengesCompleted: challengesCompleted === undefined ? 0: Number(challengesCompleted),
 		},
 	}
 }
