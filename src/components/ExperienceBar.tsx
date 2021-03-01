@@ -7,7 +7,9 @@ const ExperienceBar = () => {
 
    const {currentExperience, experienceToNextLevel} = useContext(ChallengesContext)
 
-   const percentToNextLevel = Math.round(currentExperience*100) / experienceToNextLevel
+   const percentToNextLevel = Math.round((currentExperience*100) / experienceToNextLevel)
+//    console.log(percentToNextLevel)
+//    console.log(typeof(percentToNextLevel) )
 
     return (
     <header className={styles.experienceBar} >
