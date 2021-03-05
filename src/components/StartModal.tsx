@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react"
 import { ChallengesContext } from "../contexts/ChallengesContext"
-import styles from "../styles/components/startModal.module.css"
+import styles from "../styles/components/StartModal.module.css"
 
 const StartModal = () => {
 	const { name, closeStartModal, setName } = useContext(ChallengesContext)
