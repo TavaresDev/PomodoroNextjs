@@ -43,13 +43,17 @@ const ChallengeBox = () => {
 					</footer>
 				</div>
 			) : (
-				<div className={styles.ChallengeNotActive}>
+				<div>
 					<strong> Finish a cicle to recive a challenge</strong>
-					<p>
-						<img src='icons/level-up.svg' alt='level up' />
-						Up levels by completing Challenges
-					</p>
+					
 				</div>
+				// <div className={styles.ChallengeNotActive}>
+				// 	<strong> Finish a cicle to recive a challenge</strong>
+				// 	<p>
+				// 		<img src='icons/level-up.svg' alt='level up' />
+				// 		Up levels by completing Challenges
+				// 	</p>
+				// </div>
 			)}
 		</div>
 	)

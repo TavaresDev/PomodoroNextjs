@@ -1,4 +1,4 @@
-import Head from "next/head"
+
 import { GetServerSideProps } from "next"
 import ChallengeBox from "../components/ChallengeBox"
 import CompletedChanlanges from "../components/CompletedChallenges"
@@ -9,6 +9,7 @@ import Profile from "../components/Profile"
 import styles from "../styles/pages/Home.module.css"
 import { ChallengesProvider } from "../contexts/ChallengesContext"
 import { CountdownProvider } from "../contexts/CountdownContext"
+import MainSection from "../components/MainSection"
 
 // #jornadainfinita
 // #focopraticagrupo
@@ -21,7 +22,6 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-
 	return (
 		<>
 			<ChallengesProvider
@@ -29,22 +29,10 @@ export default function Home(props: HomeProps) {
 				currentExperience={props.currentExperience}
 				challengesCompleted={props.challengesCompleted}>
 				<div className={styles.container}>
-					<Head>
-						<title>Pomodoro</title>
-					</Head>
-
 					<ExperienceBar />
 					<CountdownProvider>
-						<section>
-							<div>
-								<Profile />
-								<CompletedChanlanges />
-								<Countdown />
-							</div>
-							<div>
-								<ChallengeBox />
-							</div>
-						</section>
+
+						<MainSection />
 					</CountdownProvider>
 				</div>
 			</ChallengesProvider>
@@ -59,9 +47,11 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
 	return {
 		props: {
-			level: level === undefined ? 1: Number(level) ,
-			currentExperience: currentExperience === undefined ? 0: Number(currentExperience),
-			challengesCompleted: challengesCompleted === undefined ? 0: Number(challengesCompleted),
+			level: level === undefined ? 1 : Number(level),
+			currentExperience:
+				currentExperience === undefined ? 0 : Number(currentExperience),
+			challengesCompleted:
+				challengesCompleted === undefined ? 0 : Number(challengesCompleted),
 		},
 	}
 }
