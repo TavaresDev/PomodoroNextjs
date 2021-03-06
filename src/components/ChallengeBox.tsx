@@ -2,6 +2,7 @@ import React, { useContext } from "react"
 import { ChallengesContext } from "../contexts/ChallengesContext"
 import { CountdownContext } from "../contexts/CountdownContext"
 import styles from "../styles/components/ChallengeBox.module.css"
+import InputBox from "./InputBox"
 
 const ChallengeBox = () => {
 	const { activeChallenge, resetChallenge, completeChallenge } = useContext(
@@ -20,7 +21,6 @@ const ChallengeBox = () => {
 
 	return (
 		<div className={styles.ChallengeBoxContainer}>
-			
 			{activeChallenge ? (
 				<div className={styles.ChallengeActive}>
 					<header>{activeChallenge.amount} xp</header>
@@ -44,17 +44,23 @@ const ChallengeBox = () => {
 					</footer>
 				</div>
 			) : (
-				// <div>
-				// 	<strong> Finish a cicle to recive a challenge</strong>
-					
-				// </div>
-				<div className={styles.ChallengeNotActive}>
-					<strong> Finish a cicle to recive a challenge</strong>
-					<p>
-						<img src='icons/level-up.svg' alt='level up' />
-						Up levels by completing Challenges
-					</p>
-				</div>
+				<>
+					<div className={styles.ChallengeNotActive}>
+						<strong> Pick the cycle time</strong>
+						<InputBox />
+						<strong>
+							{" "}
+							Focus on your task, for the duration of your cycle and get a
+							challenge
+						</strong>
+						{/* <strong> 3 - Focus on your task for the duration of your cycle</strong> */}
+
+						<p>
+							<img src='icons/level-up.svg' alt='level up' />
+							level up by completing Challenges
+						</p>
+					</div>
+				</>
 			)}
 		</div>
 	)

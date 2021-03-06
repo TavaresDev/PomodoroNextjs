@@ -22,25 +22,27 @@
 }
 
 .ChallengeNotActive strong {
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 300;
     line-height: 1.4;
+    margin:1rem 0;
 }
 
 .ChallengeNotActive p {
+    width: 90%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-
     line-height: 1.4;
-
-    max-width: 70%;
+    justify-content: space-around;
     margin-top: 3rem;
-
+    text-align: left;
+    font-size: 1.1rem;
 }
 
 .ChallengeNotActive p img {
-    margin-bottom: 1rem;
+    margin-right: 0.5rem;
+    width: 2rem;
 }
 
 .ChallengeActive {
