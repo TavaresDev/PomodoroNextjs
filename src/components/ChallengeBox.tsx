@@ -20,6 +20,7 @@ const ChallengeBox = () => {
 
 	return (
 		<div className={styles.ChallengeBoxContainer}>
+			
 			{activeChallenge ? (
 				<div className={styles.ChallengeActive}>
 					<header>{activeChallenge.amount} xp</header>
@@ -43,17 +44,17 @@ const ChallengeBox = () => {
 					</footer>
 				</div>
 			) : (
-				<div>
-					<strong> Finish a cicle to recive a challenge</strong>
-					
-				</div>
-				// <div className={styles.ChallengeNotActive}>
+				// <div>
 				// 	<strong> Finish a cicle to recive a challenge</strong>
-				// 	<p>
-				// 		<img src='icons/level-up.svg' alt='level up' />
-				// 		Up levels by completing Challenges
-				// 	</p>
+					
 				// </div>
+				<div className={styles.ChallengeNotActive}>
+					<strong> Finish a cicle to recive a challenge</strong>
+					<p>
+						<img src='icons/level-up.svg' alt='level up' />
+						Up levels by completing Challenges
+					</p>
+				</div>
 			)}
 		</div>
 	)

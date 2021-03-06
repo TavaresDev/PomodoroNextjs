@@ -54,9 +54,9 @@ export function ChallengesProvider({
 
 	const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
 
-	useEffect(() => {
-		Notification.requestPermission()
-	}, [])
+	// useEffect(() => {
+	// 	Notification.requestPermission()
+	// }, [])
 
 	// save data to cookie to be avaiable on the serverside
 	useEffect(() => {
@@ -77,9 +77,6 @@ export function ChallengesProvider({
 	const closeStartModal = () => {
 		setIsStartModalOpen(false)
 	}
-	// const changeName = () => {
-	// 	setName()
-	// }
 
 	const startNewChallenge = () => {
 		const randomChallengeIndex = Math.floor(Math.random() * challenges.length)
@@ -90,12 +87,14 @@ export function ChallengesProvider({
 
 		new Audio("/notification.mp3").play()
 
-		if (Notification.permission == "granted") {
-		}
-		new Notification("New Challenge", {
-			body: `To win ${challenge.amount} xp!`,
-		})
-		console.log("new Challenge2")
+		// if (Notification.permission !== "granted") {
+		// 	Notification.requestPermission();
+		//   } else {
+		// 	new Notification('Novo desafio disponível 🥊', {
+		// 	  body: `Aumente ainda mais seu xp!`
+		// 	})
+		//   }
+	  
 	}
 
 	const resetChallenge = () => {
