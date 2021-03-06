@@ -28,7 +28,7 @@ const MainSection = () => {
 		<>
 			<Head>
                 {/* https://www.transparentpng.com/cats/circle-1344.html */}
-                {isActive ? <link rel="shortcut icon" href="/icons/redCircle.ico" type="image/x-icon" />  : <link rel="shortcut icon" href="/icons/ycircle.ico" type="image/x-icon"/>}
+                {/* {isActive ? <link rel="shortcut icon" href="/icons/redCircle.ico" type="image/x-icon" />  : <link rel="shortcut icon" href="/icons/ycircle.ico" type="image/x-icon"/>} */}
 				<title>
 					{" "}
 					{minutes.toLocaleString(undefined, {

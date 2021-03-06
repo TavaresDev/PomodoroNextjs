@@ -12,7 +12,7 @@ const Profile = () => {
 		<div className={styles.profileContainer}>
 			{/* <img src='https://github.com/tavaresdev.png' alt='user' /> */}
 			<div>
-				<strong>Nome : {name}</strong>
+				<strong>Name : {name}</strong>
 				<p>
 					<img src='icons/level.svg' alt='level' />
 					level : {level}

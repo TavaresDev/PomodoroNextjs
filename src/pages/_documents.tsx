@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
 			<Html lang='en'>
 				<Head>
 					{/* <link rel='shortcut icon' href='favicon.png' type='image/png'/> */}
-					<link rel="shortcut icon" href="/icons/ycircle.ico" type="image/x-icon"/>
+					{/* <link rel="shortcut icon" href="/icons/ycircle.ico" type="image/x-icon"/> */}
 
 					<link rel='preconnect' href='https://fonts.gstatic.com' />
 					<link

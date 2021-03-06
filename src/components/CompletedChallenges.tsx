@@ -7,7 +7,7 @@ const completedChallenges = () => {
     const {challengesCompleted} =  useContext(ChallengesContext)
     return (
         <div className={styles.completedChallengesContainer}>
-            <span>Desafios completos</span>
+            <span>Completed Challenges</span>
             <span> {challengesCompleted}</span>
             
         </div>
